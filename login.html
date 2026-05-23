@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>University Login</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* ===== خلفية الصفحة ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('assets/images/bak1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+    }
+
+    /* ===== تأثير شفاف غامق فوق الخلفية ===== */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    /* ===== حاوية تسجيل الدخول ===== */
+    .login-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
+      max-width: 400px;
+      margin: 8% auto;
+      padding: 35px 45px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    /* ===== العنوان ===== */
+    .login-container h3 {
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    /* ===== الأيقونة العلوية ===== */
+    .login-container img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    /* ===== الأزرار ===== */
+    .btn-login {
+      background-color: #007bff;
+      color: white;
+      width: 100%;
+      border-radius: 10px;
+      font-weight: 600;
+      padding: 10px;
+      transition: all 0.3s;
+    }
+
+    .btn-login:hover {
+      background-color: #0056b3;
+      transform: scale(1.02);
+    }
+
+    /* ===== الحقول ===== */
+    .form-control {
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .remember-me {
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    /* ===== الحركة ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <img src="assets/images/login-icon.png" alt="Login Icon">
+    <h3><i class="fa fa-user-lock"></i> Login</h3>
+
+    <form action="check_login.php" method="post">
+      <input type="text" name="user" placeholder="Username" class="form-control" required>
+      <input type="password" name="pass" placeholder="Password" class="form-control" required>
+
+      <div class="form-check remember-me">
+        <input type="checkbox" class="form-check-input" id="remember">
+        <label class="form-check-label" for="remember">Remember me</label>
+      </div>
+
+      <button type="submit" class="btn btn-login">Sign In</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
